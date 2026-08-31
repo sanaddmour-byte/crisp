@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-charcoal text-cream font-sans antialiased;
+  }
+
+  [dir="rtl"] body {
+    @apply font-arabic;
+  }
+}
+
+@layer utilities {
+  .section-x {
+    @apply px-6 sm:px-10 lg:px-16;
+  }
+
+  .container-max {
+    @apply mx-auto max-w-8xl;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Scroll-reveal: elements start hidden, animate in via .in-view (added by SectionReveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal.in-view {
+  animation: fade-up 0.7s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+}
