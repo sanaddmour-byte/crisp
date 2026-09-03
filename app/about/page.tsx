@@ -5,6 +5,7 @@ import { aboutContent } from "@/content/about";
 import PageHero from "@/components/PageHero";
 import SectionReveal from "@/components/SectionReveal";
 import { VerticalCtaSection } from "@/components/VerticalSections";
+import CraneSkyline from "@/components/illustrations/CraneSkyline";
 
 export default function AboutPage() {
   const { locale } = useLanguage();
@@ -16,6 +17,7 @@ export default function AboutPage() {
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
         subtitle={c.hero.subtitle}
+        illustration={<CraneSkyline className="h-full w-full" />}
       />
 
       {/* Founder bio */}

@@ -5,6 +5,10 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { homeContent } from "@/content/home";
 import CTAButton from "@/components/CTAButton";
 import SectionReveal from "@/components/SectionReveal";
+import CraneSkyline from "@/components/illustrations/CraneSkyline";
+import { IconCapital, IconBlueprint, IconOperations } from "@/components/icons";
+
+const verticalIcons = [IconCapital, IconBlueprint, IconOperations];
 
 export default function HomePage() {
   const { locale } = useLanguage();
@@ -22,6 +26,12 @@ export default function HomePage() {
           className="pointer-events-none absolute bottom-[-10rem] left-[-10%] h-[28rem] w-[28rem] rounded-full bg-steel/20 blur-3xl"
           aria-hidden
         />
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[460px] items-center justify-center text-cream opacity-[0.16] rtl:right-auto rtl:left-0 lg:flex xl:w-[560px]"
+          aria-hidden
+        >
+          <CraneSkyline className="h-full w-full" />
+        </div>
         <div className="container-max section-x relative py-24 sm:py-32 lg:py-40">
           <SectionReveal>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber">
@@ -59,13 +69,20 @@ export default function HomePage() {
           </SectionReveal>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            {c.verticals.map((v, i) => (
+            {c.verticals.map((v, i) => {
+              const Icon = verticalIcons[i];
+              return (
               <SectionReveal key={v.href} delayMs={i * 100}>
                 <Link
                   href={v.href}
                   className="group flex h-full flex-col rounded-2xl border border-cream/10 bg-white/[0.02] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-amber/50 hover:bg-white/[0.04]"
                 >
-                  <span className="text-sm font-bold text-amber">{v.tag}</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-bold text-amber">{v.tag}</span>
+                    {Icon && (
+                      <Icon className="h-7 w-7 text-cream/40 transition-colors duration-300 group-hover:text-amber" />
+                    )}
+                  </div>
                   <h3 className="mt-4 text-2xl font-bold tracking-tight text-cream">
                     {v.title}
                   </h3>
@@ -80,7 +97,8 @@ export default function HomePage() {
                   </span>
                 </Link>
               </SectionReveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
