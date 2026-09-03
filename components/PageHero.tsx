@@ -19,7 +19,7 @@ export default function PageHero({
     <section className="relative overflow-hidden border-b border-cream/10 bg-charcoal pb-20 pt-16 sm:pt-24">
       {illustration && (
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[420px] items-center justify-center text-cream opacity-70 rtl:right-auto rtl:left-0 lg:flex xl:w-[480px]"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[420px] items-center justify-center text-cream lg:flex xl:w-[480px] rtl:right-auto rtl:left-0"
           aria-hidden
         >
           {illustration}

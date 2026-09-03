@@ -16,17 +16,17 @@ export default function CapitalChart({ className = "" }: IllustrationProps) {
           <path d="M32 0H0V32" fill="none" stroke="#2C4A63" strokeWidth="1" />
         </pattern>
       </defs>
-      <rect x="0" y="0" width="480" height="480" fill="url(#cc-grid)" opacity="0.45" />
+      <rect x="0" y="0" width="480" height="480" fill="url(#cc-grid)" opacity="0.3" />
 
       {/* Axis */}
-      <path d="M80 380V100" stroke="#F5F2ED" strokeWidth="1.75" strokeLinecap="round" opacity="0.55" />
-      <path d="M80 380H400" stroke="#F5F2ED" strokeWidth="1.75" strokeLinecap="round" opacity="0.55" />
+      <path d="M80 380V100" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" opacity="0.8" />
+      <path d="M80 380H400" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" opacity="0.8" />
 
       {/* Bars */}
-      <rect x="120" y="300" width="34" height="80" rx="2" stroke="#F5F2ED" strokeWidth="2.25" opacity="0.9" />
-      <rect x="180" y="250" width="34" height="130" rx="2" stroke="#F5F2ED" strokeWidth="2.25" opacity="0.9" />
-      <rect x="240" y="190" width="34" height="190" rx="2" stroke="#F5F2ED" strokeWidth="2.25" opacity="0.9" />
-      <rect x="300" y="140" width="34" height="240" rx="2" stroke="#E8590C" strokeWidth="2.5" />
+      <rect x="120" y="300" width="34" height="80" rx="2" stroke="#FFFFFF" strokeWidth="2.5" />
+      <rect x="180" y="250" width="34" height="130" rx="2" stroke="#FFFFFF" strokeWidth="2.5" />
+      <rect x="240" y="190" width="34" height="190" rx="2" stroke="#FFFFFF" strokeWidth="2.5" />
+      <rect x="300" y="140" width="34" height="240" rx="2" stroke="#E8590C" strokeWidth="3" />
 
       {/* Trend line + markers */}
       <path

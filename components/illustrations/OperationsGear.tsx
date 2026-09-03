@@ -16,20 +16,19 @@ export default function OperationsGear({ className = "" }: IllustrationProps) {
           <path d="M30 0H0V30" fill="none" stroke="#2C4A63" strokeWidth="1" />
         </pattern>
       </defs>
-      <rect x="0" y="0" width="480" height="480" fill="url(#og-grid)" opacity="0.45" />
+      <rect x="0" y="0" width="480" height="480" fill="url(#og-grid)" opacity="0.3" />
 
       {/* Silo */}
       <path
         d="M120 200 L120 340 Q120 370 170 370 Q220 370 220 340 L220 200"
-        stroke="#F5F2ED"
-        strokeWidth="2.25"
-        opacity="0.9"
+        stroke="#FFFFFF"
+        strokeWidth="2.5"
       />
-      <path d="M170 130l50 70h-100z" stroke="#F5F2ED" strokeWidth="2.25" opacity="0.9" />
-      <path d="M120 240H220M120 280H220" stroke="#F5F2ED" strokeWidth="1.25" opacity="0.5" />
+      <path d="M170 130l50 70h-100z" stroke="#FFFFFF" strokeWidth="2.5" />
+      <path d="M120 240H220M120 280H220" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.7" />
 
       {/* Large gear */}
-      <g stroke="#E8590C" strokeWidth="2.5" strokeLinecap="round">
+      <g stroke="#E8590C" strokeWidth="3" strokeLinecap="round">
         <circle cx="330" cy="230" r="46" />
         <circle cx="330" cy="230" r="14" />
         {Array.from({ length: 8 }).map((_, i) => {
@@ -43,7 +42,7 @@ export default function OperationsGear({ className = "" }: IllustrationProps) {
       </g>
 
       {/* Small gear, interlocking */}
-      <g stroke="#F5F2ED" strokeWidth="2" strokeLinecap="round" opacity="0.85">
+      <g stroke="#FFFFFF" strokeWidth="2.25" strokeLinecap="round">
         <circle cx="395" cy="290" r="26" />
         <circle cx="395" cy="290" r="8" />
         {Array.from({ length: 6 }).map((_, i) => {
