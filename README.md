@@ -33,6 +33,26 @@ extra configuration:
 
 For any other Node hosting, run `npm run build` then `npm run start`.
 
+### GitHub Pages preview
+
+`.github/workflows/deploy-pages.yml` builds a static export and publishes it to
+GitHub Pages on every push to `main`. One-time setup: in the repo's
+**Settings → Pages**, set **Source** to **GitHub Actions**; the workflow does
+the rest. The live preview is served at
+`https://<owner>.github.io/crisp/`.
+
+This is a static export (`next build` with `output: "export"`, triggered by
+the `GITHUB_PAGES_EXPORT=true` env var the workflow sets — local
+`npm run dev`/`npm run build` are unaffected), so two things differ from the
+Vercel deployment:
+
+- It's served from the `/crisp` subpath (`basePath`/`assetPrefix` are set
+  accordingly when `GITHUB_PAGES_EXPORT=true`), not the domain root.
+- The contact form's `/api/contact` route isn't included in a static export
+  (Next.js drops API routes from `output: "export"` builds), so on this
+  preview the form will show its error state on submit. It works normally
+  on Vercel and in local dev, where the API route is served.
+
 ## Folder Structure
 
 ```

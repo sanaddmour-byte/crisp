@@ -30,7 +30,22 @@
   }
 }
 
-/* Scroll-reveal: elements start hidden, animate in via .in-view (added by SectionReveal) */
+/* Scroll-reveal: elements start hidden, animate in via .in-view (added by SectionReveal).
+   Keyframes are defined here directly (not only in tailwind.config.ts) because Tailwind's
+   JIT only emits @keyframes for animations tied to a used `animate-*` utility class, and
+   nothing here uses that utility class directly — without this, production builds silently
+   drop the keyframes and every revealed section stays stuck at opacity: 0. */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
