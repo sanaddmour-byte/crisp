@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import CTAButton from "@/components/CTAButton";
 import SectionReveal from "@/components/SectionReveal";
 import CaseScenarios from "@/components/CaseScenarios";
+import BlueprintReview from "@/components/illustrations/BlueprintReview";
 import {
   DeliverablesSection,
   PersonaSection,
@@ -23,6 +24,7 @@ export default function TechnicalDueDiligencePage() {
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
         subtitle={c.hero.subtitle}
+        illustration={<BlueprintReview className="h-full w-full" />}
       >
         <CTAButton href="/contact">{c.hero.cta}</CTAButton>
       </PageHero>

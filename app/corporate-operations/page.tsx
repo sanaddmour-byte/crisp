@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { corporateOperationsContent } from "@/content/corporateOperations";
 import PageHero from "@/components/PageHero";
 import CTAButton from "@/components/CTAButton";
+import OperationsGear from "@/components/illustrations/OperationsGear";
 import {
   DeliverablesSection,
   PersonaSection,
@@ -21,6 +22,7 @@ export default function CorporateOperationsPage() {
         eyebrow={c.hero.eyebrow}
         title={c.hero.title}
         subtitle={c.hero.subtitle}
+        illustration={<OperationsGear className="h-full w-full" />}
       >
         <CTAButton href="/contact">{c.hero.cta}</CTAButton>
       </PageHero>

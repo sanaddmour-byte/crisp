@@ -5,6 +5,7 @@ type PageHeroProps = {
   title: string;
   subtitle: string;
   children?: React.ReactNode;
+  illustration?: React.ReactNode;
 };
 
 export default function PageHero({
@@ -12,10 +13,19 @@ export default function PageHero({
   title,
   subtitle,
   children,
+  illustration,
 }: PageHeroProps) {
   return (
-    <section className="border-b border-cream/10 bg-charcoal pb-20 pt-16 sm:pt-24">
-      <div className="container-max section-x">
+    <section className="relative overflow-hidden border-b border-cream/10 bg-charcoal pb-20 pt-16 sm:pt-24">
+      {illustration && (
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[420px] items-center justify-center text-cream opacity-[0.16] rtl:right-auto rtl:left-0 lg:flex xl:w-[480px]"
+          aria-hidden
+        >
+          {illustration}
+        </div>
+      )}
+      <div className="container-max section-x relative z-10">
         <SectionReveal>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber">
             {eyebrow}
